@@ -1,0 +1,40 @@
+{
+  "members": [
+    {
+      "name": "MANAS RANJAN BEHERA",
+      "designation": "PRESIDENT",
+      "mobile": "9437633777",
+      "image": "https://drive.google.com/uc?export=view&id=15ycbIOjD55QpFYBKaZviqLmuaZRB_vwG"
+    },
+    {
+      "name": "DIWAKAR SHRIVASTAVA",
+      "designation": "VICE-PRESIDENT",
+      "mobile": "9437063367",
+      "image": "https://drive.google.com/uc?export=view&id=1oYb8HTZQJrbiCCGR21qbXlVyXHRAqV0T"
+    },
+    {
+      "name": "RANAJIT NAYAK",
+      "designation": "GENERAL SECRETARY",
+      "mobile": "9437156740",
+      "image": "https://drive.google.com/uc?export=view&id=1P9nSBZp-TWIjBEbOD9rHZ4EtZDNpLJsj"
+    },
+    {
+      "name": "ABINASH JENA",
+      "designation": "JOINT SECRETARY-I",
+      "mobile": "7008314800",
+      "image": "https://drive.google.com/uc?export=view&id=11uilI8JvDgmtu26l9gK0ZiBWFsNBzCJj"
+    },
+    {
+      "name": "SOUMYA RANJAN SAHOO",
+      "designation": "JOINT SECRETARY-II",
+      "mobile": "7606002234",
+      "image": "https://drive.google.com/uc?export=view&id=1iZBAL1Ww_jJE6Rtg53m6xZTN9VY9jz87"
+    },
+    {
+      "name": "AMLAN JYOTI DAS",
+      "designation": "TREASURER",
+      "mobile": "9932563814",
+      "image": "https://drive.google.com/uc?export=view&id=1t3ExWMj6Fm6puRLkhl8SnRdC0t92ewRe"
+    }
+  ]
+}
