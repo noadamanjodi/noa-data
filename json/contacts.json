@@ -1,0 +1,28 @@
+{
+  "contacts": [
+    {
+      "CATEGORY": "HOTEL",
+      "NAME": "NALCO Guest House",
+      "PHONE": "9876543210",
+      "ADDRESS": "Damanjodi"
+    },
+    {
+      "CATEGORY": "HOTEL",
+      "NAME": "Hotel Kamala",
+      "PHONE": "8899776655",
+      "ADDRESS": "Semiliguda"
+    },
+    {
+      "CATEGORY": "HOSPITAL",
+      "NAME": "NALCO Hospital",
+      "PHONE": "06853-123456",
+      "ADDRESS": "Damanjodi"
+    },
+    {
+      "CATEGORY": "RESTAURANT",
+      "NAME": "Hotel Annapurna",
+      "PHONE": "9090901122",
+      "ADDRESS": "Semiliguda"
+    }
+  ]
+}
