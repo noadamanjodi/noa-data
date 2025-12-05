@@ -47,6 +47,22 @@
       "alternate": "6853254323",
       "address": "NALCO Aluminium Refinery",
       "extra": ""
+    },
+    {
+      "category": "EMERGENCY",
+      "name": "CISF CONTROL ROOM (AR)",
+      "phone": "6853254243",
+      "alternate": "",
+      "address": "NALCO Aluminium Refinery",
+      "extra": ""
+    },
+    {
+      "category": "EMERGENCY",
+      "name": "TOWNSHIP SECURITY",
+      "phone": "6372801547",
+      "alternate": "",
+      "address": "Nalco Township Security Office",
+      "extra": ""
     }
   ]
 }
