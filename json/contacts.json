@@ -19,7 +19,7 @@
     {
       "category": "HOSPITAL",
       "name": "NALCO HOSPITAL",
-      "phone": "6853255333",
+      "phone": "06853255333",
       "alternate": "3333",
       "address": "NALCO HOSPITAL, DAMANJODI",
       "extra": ""
@@ -51,7 +51,7 @@
     {
       "category": "EMERGENCY",
       "name": "CISF CONTROL ROOM (AR)",
-      "phone": "6853254243",
+      "phone": "06853254243",
       "alternate": "",
       "address": "NALCO Aluminium Refinery",
       "extra": ""
@@ -67,9 +67,17 @@
     {
       "category": "RESTAURANT",
       "name": "DMJ LEMON CASTLE",
-      "phone": "6853253103",
+      "phone": "06853253103",
       "alternate": "",
       "address": "Lemon Castle Restaurant NALCO Township, sector-1, Damanjodi, Odisha 763008",
+      "extra": ""
+    },
+    {
+      "category": "RESTAURANT",
+      "name": "Gitanjali Restaurant",
+      "phone": "8328978447",
+      "alternate": "",
+      "address": "Gitanjali Restaurant,QW58+2J5, Township, NALCO Township, Damanjodi, Odisha 763008",
       "extra": ""
     }
   ]
