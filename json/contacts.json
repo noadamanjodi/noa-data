@@ -21,7 +21,31 @@
       "name": "NALCO HOSPITAL",
       "phone": "6853255333",
       "alternate": "3333",
-      "address": ",NALCO HOSPITAL, DAMANJODI",
+      "address": "NALCO HOSPITAL, DAMANJODI",
+      "extra": ""
+    },
+    {
+      "category": "EMERGENCY",
+      "name": "FIRST AID CENTER",
+      "phone": "8895261008",
+      "alternate": "2222",
+      "address": "NALCO HOSPITAL, DAMANJODI",
+      "extra": ""
+    },
+    {
+      "category": "EMERGENCY",
+      "name": "NALCO FIRE STATION",
+      "phone": "8895261014",
+      "alternate": "4444",
+      "address": "NALCO Aluminium Refinery",
+      "extra": ""
+    },
+    {
+      "category": "EMERGENCY",
+      "name": "CCR CONTROL ROOM",
+      "phone": "9827776420",
+      "alternate": "",
+      "address": "",
       "extra": ""
     }
   ]
