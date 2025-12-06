@@ -89,11 +89,27 @@
       "extra": ""
     },
     {
+      "category": "TAXI / TRANSPORT",
+      "name": "Sai Tour And Travels",
+      "phone": "7008183377",
+      "alternate": "9556622879",
+      "address": "Ganpati nagar, Damanjodi, Odisha 763008",
+      "extra": ""
+    },
+    {
       "category": "SCHOOL",
       "name": "DPS Damanjodi (Delhi Public School)",
       "phone": "06853295099",
       "alternate": "",
       "address": "Delhi Public School, Damanjodi,SECTOR-3, NALCO Township, Damanjodi, Odisha 763008",
+      "extra": ""
+    },
+    {
+      "category": "UTILITY",
+      "name": "Damanjodi Post Office",
+      "phone": "06853254422",
+      "alternate": "",
+      "address": "Damanjodi Post Office,QW67+F2G, NALCO Township, sector-1, Damanjodi, Odisha 763008",
       "extra": ""
     }
   ]
