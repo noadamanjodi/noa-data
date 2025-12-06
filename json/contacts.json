@@ -12,7 +12,7 @@
       "category": "HOTEL",
       "name": "Hotel Lemon Royal",
       "phone": "7008927700",
-      "alternate": "6853274007",
+      "alternate": "06853274007",
       "address": "Hotel Lemon Royal Bhejaput Main Rd, Bhejaput, Damanjodi, Odisha 763008",
       "extra": ""
     },
@@ -22,6 +22,22 @@
       "phone": "06853255333",
       "alternate": "3333",
       "address": "NALCO HOSPITAL, DAMANJODI",
+      "extra": ""
+    },
+    {
+      "category": "EMERGENCY",
+      "name": "TOWNSHIP SECURITY",
+      "phone": "6372801547",
+      "alternate": "",
+      "address": "Nalco Township Security Office",
+      "extra": ""
+    },
+    {
+      "category": "EMERGENCY",
+      "name": "Police Station, Damanjodi",
+      "phone": "9438916795",
+      "alternate": "06853254388",
+      "address": "Model Police Station,QW4C+R6R, NALCO Township, Damanjodi, Odisha 763008",
       "extra": ""
     },
     {
@@ -57,14 +73,6 @@
       "extra": ""
     },
     {
-      "category": "EMERGENCY",
-      "name": "TOWNSHIP SECURITY",
-      "phone": "6372801547",
-      "alternate": "",
-      "address": "Nalco Township Security Office",
-      "extra": ""
-    },
-    {
       "category": "RESTAURANT",
       "name": "DMJ LEMON CASTLE",
       "phone": "06853253103",
@@ -78,6 +86,14 @@
       "phone": "8328978447",
       "alternate": "",
       "address": "Gitanjali Restaurant,QW58+2J5, Township, NALCO Township, Damanjodi, Odisha 763008",
+      "extra": ""
+    },
+    {
+      "category": "SCHOOL",
+      "name": "DPS Damanjodi (Delhi Public School)",
+      "phone": "06853295099",
+      "alternate": "",
+      "address": "Delhi Public School, Damanjodi,SECTOR-3, NALCO Township, Damanjodi, Odisha 763008",
       "extra": ""
     }
   ]
