@@ -40,12 +40,15 @@
     }
     .carousel-inner img {
         height: 400px;
+        width: 100%;
         object-fit: cover;
         border-radius: 10px;
+        background: #eaeaea;
     }
     .loading {
         font-size: 14px;
         color: #777;
+        padding: 10px 0;
     }
 </style>
 </head>
@@ -61,37 +64,49 @@
 // === CONFIG ===
 const SHEET_ID = "17fX959sLNO6mXrTqAdu0lVeGpzwwXZ9-FSicu24BgU0";
 const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json`;
-const DRIVE_API_KEY = "AIzaSyBKZSium0piyKAQovFTOkePJ6-wdxkgaBM";   // <- ADD YOUR API KEY HERE
+const DRIVE_API_KEY = "AIzaSyBKZSium0piyKAQovFTOkePJ6-wdxkgaBM";
 // ===============
 
-// Extract folder ID
+// Extract folder ID from any Drive link
 function getFolderId(url) {
     if (!url) return "";
     url = url.trim();
+
     let m = url.match(/\/folders\/([a-zA-Z0-9_-]+)/);
     if (m) return m[1];
+
     m = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
     if (m) return m[1];
+
     if (/^[a-zA-Z0-9_-]+$/.test(url)) return url;
+
     return "";
 }
 
-// Fetch images from Drive folder
+// Fetch image file list from Drive folder
 async function getImages(folderId) {
-    const q = encodeURIComponent(`'${folderId}' in parents and mimeType contains 'image/'`);
-    const url = `https://www.googleapis.com/drive/v3/files?q=${q}&fields=files(id,name)&key=${DRIVE_API_KEY}`;
+    const query = encodeURIComponent(`'${folderId}' in parents and mimeType contains 'image/'`);
+    const url = `https://www.googleapis.com/drive/v3/files?q=${query}&fields=files(id,name)&key=${DRIVE_API_KEY}`;
 
-    const resp = await fetch(url);
-    const data = await resp.json();
-    if (!data.files) return [];
+    try {
+        const resp = await fetch(url);
+        const data = await resp.json();
 
-    return data.files.map(f => ({
-        id: f.id,
-        url: `https://drive.google.com/uc?export=view&id=${f.id}`
-    }));
+        if (!data.files) return [];
+
+        // FIXED: Using Googleusercontent direct CDN link
+        return data.files.map(file => ({
+            id: file.id,
+            url: `https://lh3.googleusercontent.com/d/${file.id}=w2000`
+        }));
+
+    } catch (e) {
+        console.error("Drive API error:", e);
+        return [];
+    }
 }
 
-// Build image carousel
+// Build Bootstrap Image Carousel
 function buildCarousel(images, cid) {
     if (images.length === 0) {
         return `<div class="loading">No photos found in folder.</div>`;
@@ -100,32 +115,32 @@ function buildCarousel(images, cid) {
     let slides = "";
     let indicators = "";
 
-    images.forEach((img, i) => {
+    images.forEach((img, index) => {
         slides += `
-        <div class="carousel-item ${i===0 ? "active" : ""}">
-            <img src="${img.url}" class="d-block w-100">
+        <div class="carousel-item ${index === 0 ? "active" : ""}">
+            <img src="${img.url}" alt="Photo">
         </div>`;
 
         indicators += `
-        <button type="button" data-bs-target="#${cid}"
-            data-bs-slide-to="${i}" class="${i===0?"active":""}">
-        </button>`;
+        <button type="button" data-bs-target="#${cid}" data-bs-slide-to="${index}" class="${index===0?"active":""}"></button>`;
     });
 
     return `
     <div id="${cid}" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">${indicators}</div>
         <div class="carousel-inner">${slides}</div>
+
         <button class="carousel-control-prev" type="button" data-bs-target="#${cid}" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
         </button>
+
         <button class="carousel-control-next" type="button" data-bs-target="#${cid}" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
         </button>
     </div>`;
 }
 
-// Load Sheet + Build Album
+// Load Sheet → Build Album
 async function loadAlbum() {
     const container = document.getElementById("albumContainer");
 
@@ -142,9 +157,9 @@ async function loadAlbum() {
         const name = r.c[0]?.v || "";
         const role = r.c[1]?.v || "";
         const msg  = r.c[2]?.v || "";
-        const folder = r.c[3]?.v || "";
+        const folderLink = r.c[3]?.v || "";
 
-        const folderId = getFolderId(folder);
+        const folderId = getFolderId(folderLink);
         const carouselId = `carousel_${i}`;
 
         container.innerHTML += `
@@ -157,13 +172,12 @@ async function loadAlbum() {
                 <div class="loading">Loading photos...</div>
             </div>
 
-            ${folder ? `<a href="${folder}" target="_blank" class="btn btn-outline-primary mt-3">Open Drive Folder</a>` : ""}
+            ${folderLink ? `<a href="${folderLink}" target="_blank" class="btn btn-outline-primary mt-3">Open Drive Folder</a>` : ""}
         </div>`;
 
         if (folderId) {
             const images = await getImages(folderId);
-            document.getElementById(`${carouselId}_box`).innerHTML =
-                buildCarousel(images, carouselId);
+            document.getElementById(`${carouselId}_box`).innerHTML = buildCarousel(images, carouselId);
         }
     }
 }
