@@ -52,11 +52,6 @@
         border-radius: 10px;
         background: #eaeaea;
     }
-    .loading {
-        font-size: 14px;
-        color: #777;
-        padding: 10px 0;
-    }
 </style>
 </head>
 
@@ -72,7 +67,7 @@
 <script>
 // === CONFIG ===
 const SHEET_ID = "17fX959sLNO6mXrTqAdu0lVeGpzwwXZ9-FSicu24BgU0";
-const SHEET_NAME = "web"; // ✔️ Add your actual sheet name here
+const SHEET_NAME = "web";
 const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?sheet=${SHEET_NAME}&tqx=out:json`;
 const DRIVE_API_KEY = "AIzaSyBKZSium0piyKAQovFTOkePJ6-wdxkgaBM";
 // ============================
@@ -81,17 +76,14 @@ const DRIVE_API_KEY = "AIzaSyBKZSium0piyKAQovFTOkePJ6-wdxkgaBM";
 function getFolderId(url) {
     if (!url) return "";
     url = url.trim();
-
     let m = url.match(/\/folders\/([A-Za-z0-9_-]+)/);
     if (m) return m[1];
-
     m = url.match(/[?&]id=([A-Za-z0-9_-]+)/);
     if (m) return m[1];
-
     return "";
 }
 
-// Get images from Drive using SAFE URL format
+// Get images from Drive
 async function getImages(folderId) {
     const q = encodeURIComponent(`'${folderId}' in parents and mimeType contains 'image/'`);
     const url = `https://www.googleapis.com/drive/v3/files?q=${q}&fields=files(id,name,mimeType)&key=${DRIVE_API_KEY}`;
@@ -99,7 +91,6 @@ async function getImages(folderId) {
     try {
         const resp = await fetch(url);
         const data = await resp.json();
-
         if (!data.files) return [];
 
         return data.files.map(f => ({
@@ -116,7 +107,7 @@ async function getImages(folderId) {
 // Build Carousel
 function buildCarousel(images, cid) {
     if (images.length === 0) {
-        return `<div class="loading">No photos found in folder.</div>`;
+        return `<div>No photos found in folder.</div>`;
     }
 
     let slides = "";
@@ -129,7 +120,7 @@ function buildCarousel(images, cid) {
         </div>`;
 
         indicators += `
-        <button type="button" data-bs-target="#${cid}" data-bs-slide-to="${i}" 
+        <button type="button" data-bs-target="#${cid}" data-bs-slide-to="${i}"
             class="${i===0?"active":""}"></button>`;
     });
 
@@ -155,6 +146,26 @@ function buildCarousel(images, cid) {
     </div>`;
 }
 
+// ⭐ Fix: Activate autoplay ONLY after all images load
+function activateCarouselWhenReady(id) {
+    const el = document.getElementById(id);
+    const imgs = el.querySelectorAll("img");
+
+    let loaded = 0;
+    imgs.forEach(img => {
+        img.onload = () => {
+            loaded++;
+            if (loaded === imgs.length) {
+                new bootstrap.Carousel(el, {
+                    interval: 2500,
+                    ride: "carousel",
+                    pause: false
+                });
+            }
+        };
+    });
+}
+
 // Main Loader
 async function loadAlbum() {
     const container = document.getElementById("albumContainer");
@@ -169,7 +180,6 @@ async function loadAlbum() {
     for (let i = 0; i < rows.length; i++) {
         const r = rows[i];
 
-        // ✔️ UPDATED COLUMN INDEXES AFTER SHIFT
         const name = r.c[1]?.v || "";
         const role = r.c[2]?.v || "";
         const msg  = r.c[3]?.v || "";
@@ -181,9 +191,8 @@ async function loadAlbum() {
         container.innerHTML += `
         <div class="card">
             <div id="${carouselId}_box" class="mb-3">
-                <div class="loading">Loading photos...</div>
+                <div>Loading photos...</div>
             </div>
-
             <div class="name">${name}</div>
             <div class="role">${role}</div>
             <div class="msg">${msg}</div>
@@ -191,15 +200,11 @@ async function loadAlbum() {
 
         if (folderId) {
             const images = await getImages(folderId);
-
             document.getElementById(`${carouselId}_box`).innerHTML =
                 buildCarousel(images, carouselId);
 
-            // Force-init carousel autoplay
-            setTimeout(() => {
-                const el = document.getElementById(carouselId);
-                if (el) new bootstrap.Carousel(el);
-            }, 150);
+            // Autoplay fix applied here
+            activateCarouselWhenReady(carouselId);
         }
     }
 }
