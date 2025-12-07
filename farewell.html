@@ -121,25 +121,32 @@ function buildCarousel(images, cid) {
         <div class="carousel-item ${index === 0 ? "active" : ""}">
             <img src="${img.url}" alt="Photo">
         </div>`;
-
         indicators += `
-        <button type="button" data-bs-target="#${cid}" data-bs-slide-to="${index}" 
+        <button type="button" data-bs-target="#${cid}" data-bs-slide-to="${index}"
                 class="${index===0?"active":""}"></button>`;
     });
 
     return `
-    <div id="${cid}" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div id="${cid}" 
+         class="carousel slide carousel-fade"
+         data-bs-ride="carousel"
+         data-bs-interval="3000"
+         data-bs-pause="false"
+         data-bs-touch="false">
+
         <div class="carousel-indicators">${indicators}</div>
         <div class="carousel-inner">${slides}</div>
 
         <button class="carousel-control-prev" type="button" data-bs-target="#${cid}" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
         </button>
+
         <button class="carousel-control-next" type="button" data-bs-target="#${cid}" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
         </button>
     </div>`;
 }
+
 
 // Load Sheet → Build Album
 async function loadAlbum() {
