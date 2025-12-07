@@ -52,6 +52,12 @@
         border-radius: 10px;
         background: #eaeaea;
     }
+    .loading {
+        font-size: 14px;
+        color: #777;
+        padding: 10px 0;
+        text-align: center;
+    }
 </style>
 </head>
 
@@ -76,10 +82,13 @@ const DRIVE_API_KEY = "AIzaSyBKZSium0piyKAQovFTOkePJ6-wdxkgaBM";
 function getFolderId(url) {
     if (!url) return "";
     url = url.trim();
+
     let m = url.match(/\/folders\/([A-Za-z0-9_-]+)/);
     if (m) return m[1];
+
     m = url.match(/[?&]id=([A-Za-z0-9_-]+)/);
     if (m) return m[1];
+
     return "";
 }
 
@@ -91,6 +100,7 @@ async function getImages(folderId) {
     try {
         const resp = await fetch(url);
         const data = await resp.json();
+
         if (!data.files) return [];
 
         return data.files.map(f => ({
@@ -107,7 +117,7 @@ async function getImages(folderId) {
 // Build Carousel
 function buildCarousel(images, cid) {
     if (images.length === 0) {
-        return `<div>No photos found in folder.</div>`;
+        return `<div class="loading">No photos found in folder.</div>`;
     }
 
     let slides = "";
@@ -146,23 +156,44 @@ function buildCarousel(images, cid) {
     </div>`;
 }
 
-// ⭐ Fix: Activate autoplay ONLY after all images load
+// ✅ Robust: activate even if some images fail OR are cached
 function activateCarouselWhenReady(id) {
     const el = document.getElementById(id);
-    const imgs = el.querySelectorAll("img");
+    if (!el) return;
 
-    let loaded = 0;
+    const imgs = el.querySelectorAll("img");
+    if (imgs.length === 0) {
+        // No images, still init to be safe
+        new bootstrap.Carousel(el, {
+            interval: 2500,
+            ride: "carousel",
+            pause: false
+        });
+        return;
+    }
+
+    let doneCount = 0;
+
+    const markDone = () => {
+        doneCount++;
+        if (doneCount === imgs.length) {
+            // All images either loaded or failed → start carousel
+            new bootstrap.Carousel(el, {
+                interval: 2500,
+                ride: "carousel",
+                pause: false
+            });
+        }
+    };
+
     imgs.forEach(img => {
-        img.onload = () => {
-            loaded++;
-            if (loaded === imgs.length) {
-                new bootstrap.Carousel(el, {
-                    interval: 2500,
-                    ride: "carousel",
-                    pause: false
-                });
-            }
-        };
+        // If already loaded from cache
+        if (img.complete) {
+            markDone();
+        } else {
+            img.onload = markDone;
+            img.onerror = markDone; // even if error, still count
+        }
     });
 }
 
@@ -191,8 +222,9 @@ async function loadAlbum() {
         container.innerHTML += `
         <div class="card">
             <div id="${carouselId}_box" class="mb-3">
-                <div>Loading photos...</div>
+                <div class="loading">Loading photos...</div>
             </div>
+
             <div class="name">${name}</div>
             <div class="role">${role}</div>
             <div class="msg">${msg}</div>
@@ -200,11 +232,15 @@ async function loadAlbum() {
 
         if (folderId) {
             const images = await getImages(folderId);
+
             document.getElementById(`${carouselId}_box`).innerHTML =
                 buildCarousel(images, carouselId);
 
-            // Autoplay fix applied here
+            // Start carousel when images are ready (or failed)
             activateCarouselWhenReady(carouselId);
+        } else {
+            document.getElementById(`${carouselId}_box`).innerHTML =
+                `<div class="loading">No folder linked.</div>`;
         }
     }
 }
