@@ -29,14 +29,16 @@
         font-size: 22px;
         font-weight: 600;
         color: #003f88;
+        text-align: center;
+        margin-top: 15px;
     }
-    .role {
+    .role, .msg {
+        text-align: center;
         font-size: 15px;
         color: #444;
     }
     .msg {
-        margin-top: 10px;
-        font-size: 15px;
+        margin-top: 5px;
     }
     .carousel-inner img {
         height: 400px;
@@ -94,7 +96,6 @@ async function getImages(folderId) {
 
         if (!data.files) return [];
 
-        // FIXED: Using Googleusercontent direct CDN link
         return data.files.map(file => ({
             id: file.id,
             url: `https://lh3.googleusercontent.com/d/${file.id}=w2000`
@@ -106,7 +107,7 @@ async function getImages(folderId) {
     }
 }
 
-// Build Bootstrap Image Carousel
+// Build Bootstrap Image Carousel — AUTOPLAY ENABLED
 function buildCarousel(images, cid) {
     if (images.length === 0) {
         return `<div class="loading">No photos found in folder.</div>`;
@@ -122,18 +123,18 @@ function buildCarousel(images, cid) {
         </div>`;
 
         indicators += `
-        <button type="button" data-bs-target="#${cid}" data-bs-slide-to="${index}" class="${index===0?"active":""}"></button>`;
+        <button type="button" data-bs-target="#${cid}" data-bs-slide-to="${index}" 
+                class="${index===0?"active":""}"></button>`;
     });
 
     return `
-    <div id="${cid}" class="carousel slide" data-bs-ride="carousel">
+    <div id="${cid}" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-indicators">${indicators}</div>
         <div class="carousel-inner">${slides}</div>
 
         <button class="carousel-control-prev" type="button" data-bs-target="#${cid}" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
         </button>
-
         <button class="carousel-control-next" type="button" data-bs-target="#${cid}" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
         </button>
@@ -162,17 +163,16 @@ async function loadAlbum() {
         const folderId = getFolderId(folderLink);
         const carouselId = `carousel_${i}`;
 
+        // Officer details now BELOW the carousel
         container.innerHTML += `
         <div class="card">
-            <div class="name">${name}</div>
-            <div class="role">${role}</div>
-            <div class="msg">${msg}</div>
-
-            <div id="${carouselId}_box" class="mt-3">
+            <div id="${carouselId}_box" class="mb-3">
                 <div class="loading">Loading photos...</div>
             </div>
 
-            ${folderLink ? `<a href="${folderLink}" target="_blank" class="btn btn-outline-primary mt-3">Open Drive Folder</a>` : ""}
+            <div class="name">${name}</div>
+            <div class="role">${role}</div>
+            <div class="msg">${msg}</div>
         </div>`;
 
         if (folderId) {
