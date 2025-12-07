@@ -29,18 +29,14 @@
         font-size: 22px;
         font-weight: 600;
         text-align: center;
-        margin-top: 12px;
+        margin-top: 15px;
         color: #003f88;
     }
-    .role {
+    .role, .msg {
         text-align: center;
         font-size: 15px;
+        margin-top: 4px;
         color: #444;
-    }
-    .msg {
-        text-align: center;
-        margin-top: 8px;
-        font-size: 15px;
     }
     .carousel-inner img {
         height: 400px;
@@ -70,26 +66,26 @@
 const SHEET_ID = "17fX959sLNO6mXrTqAdu0lVeGpzwwXZ9-FSicu24BgU0";
 const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json`;
 const DRIVE_API_KEY = "AIzaSyBKZSium0piyKAQovFTOkePJ6-wdxkgaBM";
-// ===============
+// ============================
 
 // Extract folder ID
 function getFolderId(url) {
     if (!url) return "";
     url = url.trim();
 
-    let m = url.match(/\/folders\/([a-zA-Z0-9_-]+)/);
+    let m = url.match(/\/folders\/([A-Za-z0-9_-]+)/);
     if (m) return m[1];
 
-    m = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+    m = url.match(/[?&]id=([A-Za-z0-9_-]+)/);
     if (m) return m[1];
 
     return "";
 }
 
-// Fetch images from Drive
+// Get images from Drive using SAFE URL format
 async function getImages(folderId) {
     const q = encodeURIComponent(`'${folderId}' in parents and mimeType contains 'image/'`);
-    const url = `https://www.googleapis.com/drive/v3/files?q=${q}&fields=files(id,name)&key=${DRIVE_API_KEY}`;
+    const url = `https://www.googleapis.com/drive/v3/files?q=${q}&fields=files(id,name,mimeType)&key=${DRIVE_API_KEY}`;
 
     try {
         const resp = await fetch(url);
@@ -99,16 +95,16 @@ async function getImages(folderId) {
 
         return data.files.map(f => ({
             id: f.id,
-            url: `https://lh3.googleusercontent.com/d/${f.id}=w2000`
+            url: `https://drive.google.com/thumbnail?id=${f.id}&sz=w2000`
         }));
 
-    } catch (e) {
-        console.error("Drive API Fail:", e);
+    } catch (err) {
+        console.error("Drive API error:", err);
         return [];
     }
 }
 
-// Build Carousel HTML
+// Build Carousel
 function buildCarousel(images, cid) {
     if (images.length === 0) {
         return `<div class="loading">No photos found in folder.</div>`;
@@ -120,19 +116,19 @@ function buildCarousel(images, cid) {
     images.forEach((img, i) => {
         slides += `
         <div class="carousel-item ${i === 0 ? "active" : ""}">
-            <img src="${img.url}" class="d-block w-100" alt="Photo">
+            <img src="${img.url}" alt="Photo">
         </div>`;
 
         indicators += `
-        <button type="button" data-bs-target="#${cid}" data-bs-slide-to="${i}"
-                class="${i===0?'active':''}"></button>`;
+        <button type="button" data-bs-target="#${cid}" data-bs-slide-to="${i}" 
+            class="${i===0?"active":""}"></button>`;
     });
 
     return `
     <div id="${cid}"
          class="carousel slide carousel-fade"
-         data-bs-ride="carousel"
          data-bs-interval="2500"
+         data-bs-ride="carousel"
          data-bs-pause="false"
          data-bs-touch="false"
          data-bs-wrap="true">
@@ -150,7 +146,7 @@ function buildCarousel(images, cid) {
     </div>`;
 }
 
-// Load Album Data
+// Main Loader
 async function loadAlbum() {
     const container = document.getElementById("albumContainer");
 
@@ -167,9 +163,9 @@ async function loadAlbum() {
         const name = r.c[0]?.v || "";
         const role = r.c[1]?.v || "";
         const msg  = r.c[2]?.v || "";
-        const folder = r.c[3]?.v || "";
+        const folderLink = r.c[3]?.v || "";
 
-        const folderId = getFolderId(folder);
+        const folderId = getFolderId(folderLink);
         const carouselId = `carousel_${i}`;
 
         container.innerHTML += `
@@ -186,23 +182,14 @@ async function loadAlbum() {
         if (folderId) {
             const images = await getImages(folderId);
 
-            // Insert carousel HTML
             document.getElementById(`${carouselId}_box`).innerHTML =
                 buildCarousel(images, carouselId);
 
-            // 🚀 Force Bootstrap to initialize carousel autoplay
+            // Force-init carousel autoplay
             setTimeout(() => {
                 const el = document.getElementById(carouselId);
-                if (el) {
-                    new bootstrap.Carousel(el, {
-                        interval: 2500,
-                        ride: "carousel",
-                        pause: false,
-                        wrap: true,
-                        touch: false
-                    });
-                }
-            }, 300);
+                if (el) new bootstrap.Carousel(el);
+            }, 150);
         }
     }
 }
