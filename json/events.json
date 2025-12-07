@@ -6,23 +6,30 @@
       "desc": "EC Body Meeting as per schedule for the month of December 2025",
       "status": "COMING",
       "newTag": "NEW"
+    },
+    {
+      "date": "18-12-2025",
+      "title": "TESTING",
+      "desc": "TESTING TIME",
+      "status": "COMING",
+      "newTag": "NEW"
     }
   ],
   "important": [],
   "past": [
+    {
+      "date": "13-11-2025",
+      "title": "EC BODY MEETING",
+      "desc": "EC Body Meeting as per schedule for the month of November 2025",
+      "status": "PAST",
+      "newTag": ""
+    },
     {
       "date": "28-11-2025",
       "title": "Retirement Farewell  ? November 2025",
       "desc": "Farewell to CGM(AR) Sri Asish Senapati Sir will be given from  NOA on 28th  November 2025.\u000b Members are encouraged to participate.\n",
       "status": "PAST",
       "newTag": ""
-    },
-    {
-      "date": "18-12-2025",
-      "title": "TESTING",
-      "desc": "TESTING",
-      "status": "PAST",
-      "newTag": "NEW"
     }
   ]
 }
