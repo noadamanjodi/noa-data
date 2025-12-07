@@ -157,7 +157,7 @@ async function loadAlbum() {
     const rows = json.table.rows;
     container.innerHTML = "";
 
-    for (let i = 1; i < rows.length; i++) {
+    for (let i = rows.length - 1; i >= 1; i--) {
         const r = rows[i];
 
         const name = r.c[0]?.v || "";
