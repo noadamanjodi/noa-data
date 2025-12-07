@@ -28,17 +28,19 @@
     .name {
         font-size: 22px;
         font-weight: 600;
-        color: #003f88;
         text-align: center;
-        margin-top: 15px;
+        margin-top: 12px;
+        color: #003f88;
     }
-    .role, .msg {
+    .role {
         text-align: center;
         font-size: 15px;
         color: #444;
     }
     .msg {
-        margin-top: 5px;
+        text-align: center;
+        margin-top: 8px;
+        font-size: 15px;
     }
     .carousel-inner img {
         height: 400px;
@@ -54,6 +56,7 @@
     }
 </style>
 </head>
+
 <body>
 
 <h1>Farewell Album</h1>
@@ -69,7 +72,7 @@ const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tq
 const DRIVE_API_KEY = "AIzaSyBKZSium0piyKAQovFTOkePJ6-wdxkgaBM";
 // ===============
 
-// Extract folder ID from any Drive link
+// Extract folder ID
 function getFolderId(url) {
     if (!url) return "";
     url = url.trim();
@@ -80,15 +83,13 @@ function getFolderId(url) {
     m = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
     if (m) return m[1];
 
-    if (/^[a-zA-Z0-9_-]+$/.test(url)) return url;
-
     return "";
 }
 
-// Fetch image file list from Drive folder
+// Fetch images from Drive
 async function getImages(folderId) {
-    const query = encodeURIComponent(`'${folderId}' in parents and mimeType contains 'image/'`);
-    const url = `https://www.googleapis.com/drive/v3/files?q=${query}&fields=files(id,name)&key=${DRIVE_API_KEY}`;
+    const q = encodeURIComponent(`'${folderId}' in parents and mimeType contains 'image/'`);
+    const url = `https://www.googleapis.com/drive/v3/files?q=${q}&fields=files(id,name)&key=${DRIVE_API_KEY}`;
 
     try {
         const resp = await fetch(url);
@@ -96,18 +97,18 @@ async function getImages(folderId) {
 
         if (!data.files) return [];
 
-        return data.files.map(file => ({
-            id: file.id,
-            url: `https://lh3.googleusercontent.com/d/${file.id}=w2000`
+        return data.files.map(f => ({
+            id: f.id,
+            url: `https://lh3.googleusercontent.com/d/${f.id}=w2000`
         }));
 
     } catch (e) {
-        console.error("Drive API error:", e);
+        console.error("Drive API Fail:", e);
         return [];
     }
 }
 
-// Build Bootstrap Image Carousel — AUTOPLAY ENABLED
+// Build Carousel HTML
 function buildCarousel(images, cid) {
     if (images.length === 0) {
         return `<div class="loading">No photos found in folder.</div>`;
@@ -116,25 +117,25 @@ function buildCarousel(images, cid) {
     let slides = "";
     let indicators = "";
 
-    images.forEach((img, index) => {
+    images.forEach((img, i) => {
         slides += `
-        <div class="carousel-item ${index === 0 ? "active" : ""}">
+        <div class="carousel-item ${i === 0 ? "active" : ""}">
             <img src="${img.url}" class="d-block w-100" alt="Photo">
         </div>`;
 
         indicators += `
-        <button type="button" data-bs-target="#${cid}" data-bs-slide-to="${index}"
-                class="${index===0?'active':''}"></button>`;
+        <button type="button" data-bs-target="#${cid}" data-bs-slide-to="${i}"
+                class="${i===0?'active':''}"></button>`;
     });
 
     return `
-    <div id="${cid}" 
+    <div id="${cid}"
          class="carousel slide carousel-fade"
          data-bs-ride="carousel"
-         data-bs-interval="2500"      <!-- speed (2.5 seconds) -->
-         data-bs-pause="false"        <!-- don't stop on hover -->
-         data-bs-touch="false"        <!-- disable swipe stop -->
-         data-bs-wrap="true">         <!-- loop forever -->
+         data-bs-interval="2500"
+         data-bs-pause="false"
+         data-bs-touch="false"
+         data-bs-wrap="true">
 
         <div class="carousel-indicators">${indicators}</div>
         <div class="carousel-inner">${slides}</div>
@@ -149,8 +150,7 @@ function buildCarousel(images, cid) {
     </div>`;
 }
 
-
-// Load Sheet → Build Album
+// Load Album Data
 async function loadAlbum() {
     const container = document.getElementById("albumContainer");
 
@@ -161,18 +161,17 @@ async function loadAlbum() {
     const rows = json.table.rows;
     container.innerHTML = "";
 
-    for (let i = 0; i < rows.length; i++) {
+    for (let i = 1; i < rows.length; i++) {
         const r = rows[i];
 
         const name = r.c[0]?.v || "";
         const role = r.c[1]?.v || "";
         const msg  = r.c[2]?.v || "";
-        const folderLink = r.c[3]?.v || "";
+        const folder = r.c[3]?.v || "";
 
-        const folderId = getFolderId(folderLink);
+        const folderId = getFolderId(folder);
         const carouselId = `carousel_${i}`;
 
-        // Officer details now BELOW the carousel
         container.innerHTML += `
         <div class="card">
             <div id="${carouselId}_box" class="mb-3">
@@ -186,7 +185,24 @@ async function loadAlbum() {
 
         if (folderId) {
             const images = await getImages(folderId);
-            document.getElementById(`${carouselId}_box`).innerHTML = buildCarousel(images, carouselId);
+
+            // Insert carousel HTML
+            document.getElementById(`${carouselId}_box`).innerHTML =
+                buildCarousel(images, carouselId);
+
+            // 🚀 Force Bootstrap to initialize carousel autoplay
+            setTimeout(() => {
+                const el = document.getElementById(carouselId);
+                if (el) {
+                    new bootstrap.Carousel(el, {
+                        interval: 2500,
+                        ride: "carousel",
+                        pause: false,
+                        wrap: true,
+                        touch: false
+                    });
+                }
+            }, 300);
         }
     }
 }
