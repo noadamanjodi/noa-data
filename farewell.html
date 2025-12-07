@@ -166,7 +166,7 @@ async function loadAlbum() {
     const rows = json.table.rows;
     container.innerHTML = "";
 
-    for (let i = rows.length - 1; i >= 1; i--) {
+    for (let i = 1; i < rows.length; i++) {
         const r = rows[i];
 
         // ✔️ UPDATED COLUMN INDEXES AFTER SHIFT
