@@ -72,7 +72,8 @@
 <script>
 // === CONFIG ===
 const SHEET_ID = "17fX959sLNO6mXrTqAdu0lVeGpzwwXZ9-FSicu24BgU0";
-const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json`;
+const SHEET_NAME = "web"; // ✔️ Add your actual sheet name here
+const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?sheet=${SHEET_NAME}&tqx=out:json`;
 const DRIVE_API_KEY = "AIzaSyBKZSium0piyKAQovFTOkePJ6-wdxkgaBM";
 // ============================
 
@@ -168,10 +169,11 @@ async function loadAlbum() {
     for (let i = rows.length - 1; i >= 1; i--) {
         const r = rows[i];
 
-        const name = r.c[0]?.v || "";
-        const role = r.c[1]?.v || "";
-        const msg  = r.c[2]?.v || "";
-        const folderLink = r.c[3]?.v || "";
+        // ✔️ UPDATED COLUMN INDEXES AFTER SHIFT
+        const name = r.c[1]?.v || "";
+        const role = r.c[2]?.v || "";
+        const msg  = r.c[3]?.v || "";
+        const folderLink = r.c[4]?.v || "";
 
         const folderId = getFolderId(folderLink);
         const carouselId = `carousel_${i}`;
