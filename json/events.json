@@ -1,9 +1,9 @@
 {
   "coming": [
     {
-      "date": "11-12-2025",
-      "title": "EC BODY MEETING",
-      "desc": "EC Body Meeting as per schedule for the month of December 2025",
+      "date": "18-12-2025",
+      "title": "Retirement Farewell  ? December 2025",
+      "desc": "Farewell to CGM(O&M) Sri Anil kumar singh & Ex-president NOA Sri Susant Kar will be given from  NOA on 20 th  December 2025.\u000b Members are encouraged to participate.\n",
       "status": "COMING",
       "newTag": "NEW"
     }
@@ -23,6 +23,13 @@
       "desc": "Farewell to CGM(AR) Sri Asish Senapati Sir will be given from  NOA on 28th  November 2025.\u000b Members are encouraged to participate.\n",
       "status": "PAST",
       "newTag": ""
+    },
+    {
+      "date": "11-12-2025",
+      "title": "EC BODY MEETING",
+      "desc": "EC Body Meeting as per schedule for the month of December 2025",
+      "status": "PAST",
+      "newTag": "NEW"
     }
   ]
 }
