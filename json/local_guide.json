@@ -10,16 +10,6 @@
     "Status": "Active"
   },
   {
-    "Category": "BANK",
-    "Name": "State Bank of India",
-    "Description": "IFSC:SBIN0006908",
-    "Contact": "06853254220",
-    "Map_Link": "https://maps.app.goo.gl/pLs75Doe4sGHjo3F7",
-    "Photo_Link": "https://raw.githubusercontent.com/noadamanjodi/noa-data/main/image/sbi_dmj.jpg",
-    "Priority": 2,
-    "Status": "Active"
-  },
-  {
     "Category": "Petrol Pump",
     "Name": "Indu Filling Station Ksk",
     "Description": "IndianOil petrol pump",
@@ -30,13 +20,23 @@
     "Status": "Active"
   },
   {
+    "Category": "BANK",
+    "Name": "State Bank of India",
+    "Description": "IFSC:SBIN0006908",
+    "Contact": "06853254220",
+    "Map_Link": "https://maps.app.goo.gl/pLs75Doe4sGHjo3F7",
+    "Photo_Link": "https://raw.githubusercontent.com/noadamanjodi/noa-data/main/image/sbi_dmj.jpg",
+    "Priority": 3,
+    "Status": "Active"
+  },
+  {
     "Category": "School",
     "Name": "Delhi Public School",
     "Description": "CBSE Education",
     "Contact": "06853295099",
     "Map_Link": "https://maps.app.goo.gl/SEtV6XDjxb7strcX6",
     "Photo_Link": "https://raw.githubusercontent.com/noadamanjodi/noa-data/main/image/DPS.jpg",
-    "Priority": 3,
+    "Priority": 4,
     "Status": "Active"
   }
 ]
