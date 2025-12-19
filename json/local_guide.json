@@ -10,12 +10,12 @@
     "Status": "Active"
   },
   {
-    "Category": "Petrol Pump",
-    "Name": "Indu Filling Station Ksk",
-    "Description": "IndianOil petrol pump",
-    "Contact": "9437043652",
-    "Map_Link": "https://maps.app.goo.gl/1badvd5EtKxvjqby5",
-    "Photo_Link": "https://raw.githubusercontent.com/noadamanjodi/noa-data/main/image/petrol%20pump%20iocl.jpg",
+    "Category": "School",
+    "Name": "Delhi Public School",
+    "Description": "CBSE Education",
+    "Contact": "06853295099",
+    "Map_Link": "https://maps.app.goo.gl/SEtV6XDjxb7strcX6",
+    "Photo_Link": "https://raw.githubusercontent.com/noadamanjodi/noa-data/main/image/DPS.jpg",
     "Priority": 2,
     "Status": "Active"
   },
@@ -30,12 +30,12 @@
     "Status": "Active"
   },
   {
-    "Category": "School",
-    "Name": "Delhi Public School",
-    "Description": "CBSE Education",
-    "Contact": "06853295099",
-    "Map_Link": "https://maps.app.goo.gl/SEtV6XDjxb7strcX6",
-    "Photo_Link": "https://raw.githubusercontent.com/noadamanjodi/noa-data/main/image/DPS.jpg",
+    "Category": "Petrol Pump",
+    "Name": "Indu Filling Station Ksk",
+    "Description": "IndianOil petrol pump",
+    "Contact": "9437043652",
+    "Map_Link": "https://maps.app.goo.gl/1badvd5EtKxvjqby5",
+    "Photo_Link": "https://raw.githubusercontent.com/noadamanjodi/noa-data/main/image/petrol%20pump%20iocl.jpg",
     "Priority": 4,
     "Status": "Active"
   }
