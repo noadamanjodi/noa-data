@@ -20,6 +20,16 @@
     "Status": "Active"
   },
   {
+    "Category": "Petrol Pump",
+    "Name": "Indu Filling Station Ksk",
+    "Description": "IndianOil petrol pump",
+    "Contact": "9437043652",
+    "Map_Link": "https://maps.app.goo.gl/1badvd5EtKxvjqby5",
+    "Photo_Link": "",
+    "Priority": 2,
+    "Status": "Active"
+  },
+  {
     "Category": "School",
     "Name": "Delhi Public School",
     "Description": "CBSE Education",
