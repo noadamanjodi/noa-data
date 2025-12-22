@@ -6,7 +6,7 @@
       "pickup": "DAMANJODI",
       "drop": "VIZYANAGARMA",
       "date": "25-12-2025",
-      "time": "1899-12-30T01:38:50.000Z",
+      "time": "07:08 AM",
       "seats": 2,
       "remarks": "TESTING PURPOSE"
     },
@@ -16,7 +16,7 @@
       "pickup": "BAM",
       "drop": "BBSR",
       "date": "23-12-2025",
-      "time": "1899-12-30T03:38:50.000Z",
+      "time": "09:08 AM",
       "seats": 2,
       "remarks": "KND"
     },
@@ -26,7 +26,7 @@
       "pickup": "BGHN",
       "drop": "RTHY",
       "date": "25-12-2025",
-      "time": "1899-12-30T11:38:50.000Z",
+      "time": "05:08 PM",
       "seats": 2,
       "remarks": "TESTING"
     }
