@@ -1,3 +1,14 @@
 {
-  "rides": []
+  "rides": [
+    {
+      "name": "RAKESH",
+      "phone": 9438325591,
+      "pickup": "DAMANJODI",
+      "drop": "VIZYANAGARMA",
+      "date": "25-12-2025",
+      "time": "1899-12-30T01:38:50.000Z",
+      "seats": 2,
+      "remarks": "TESTING PURPOSE"
+    }
+  ]
 }
