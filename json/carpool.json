@@ -1,34 +1,3 @@
 {
-  "rides": [
-    {
-      "name": "RAKESH",
-      "phone": 9438325591,
-      "pickup": "DAMANJODI",
-      "drop": "VIZYANAGARMA",
-      "date": "25-12-2025",
-      "time": "07:08 AM",
-      "seats": 2,
-      "remarks": "TESTING PURPOSE"
-    },
-    {
-      "name": "Ram",
-      "phone": 7978961230,
-      "pickup": "BAM",
-      "drop": "BBSR",
-      "date": "23-12-2025",
-      "time": "09:08 AM",
-      "seats": 2,
-      "remarks": "KND"
-    },
-    {
-      "name": "TAMNEN",
-      "phone": 6789679020,
-      "pickup": "BGHN",
-      "drop": "RTHY",
-      "date": "25-12-2025",
-      "time": "05:08 PM",
-      "seats": 2,
-      "remarks": "TESTING"
-    }
-  ]
+  "rides": []
 }
