@@ -109,7 +109,7 @@
       "name": "OD10 Restaurant",
       "phone": "7077780872",
       "alternate": "",
-      "address": "https://maps.app.goo.gl/hrdqNTbRUC6KZub78",
+      "address": "OD10 Restaurant,QV5X+48V, Sector 3, Market Complex, Damanjodi, Odisha 763008",
       "extra": ""
     },
     {
@@ -158,6 +158,14 @@
       "phone": "9439539537",
       "alternate": "8895636500",
       "address": "BSNL Office ,NALCO Township, BSNL Exchange and JTO Office, Damanjodi, Odisha 763008",
+      "extra": ""
+    },
+    {
+      "category": "Personal service",
+      "name": "AC shifting or new fixing",
+      "phone": "",
+      "alternate": "",
+      "address": "",
       "extra": ""
     }
   ]
