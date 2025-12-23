@@ -74,6 +74,14 @@
     },
     {
       "category": "RESTAURANT",
+      "name": "Hotel Lemon Royal",
+      "phone": "7008927700",
+      "alternate": "06853274007",
+      "address": "Hotel Lemon Royal Bhejaput Main Rd, Bhejaput, Damanjodi, Odisha 763008",
+      "extra": ""
+    },
+    {
+      "category": "RESTAURANT",
       "name": "DMJ LEMON CASTLE",
       "phone": "06853253103",
       "alternate": "",
@@ -142,6 +150,14 @@
       "phone": "9437043652",
       "alternate": "",
       "address": "IndianOil,Ground Floor Bhejaput Mirchamal, Damanjodi, Bhitarguda, Odisha 763008",
+      "extra": ""
+    },
+    {
+      "category": "UTILITY",
+      "name": "BSNL Exchange office",
+      "phone": "9439539537",
+      "alternate": "8895636500",
+      "address": "BSNL Office ,NALCO Township, BSNL Exchange and JTO Office, Damanjodi, Odisha 763008",
       "extra": ""
     }
   ]
