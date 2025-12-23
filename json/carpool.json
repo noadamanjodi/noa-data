@@ -9,7 +9,8 @@
       "date": "25-12-2025",
       "time": "08:08 PM",
       "seats": 4,
-      "remarks": "TESTING"
+      "remarks": "TESTING",
+      "status": "ACTIVE"
     },
     {
       "email": "rakeshbunu@gmail.com",
@@ -20,7 +21,8 @@
       "date": "24-12-2025",
       "time": "08:08 PM",
       "seats": 2,
-      "remarks": "TESTING"
+      "remarks": "TESTING",
+      "status": "ACTIVE"
     },
     {
       "email": "XXX@GMAIL.COM",
@@ -31,7 +33,8 @@
       "date": "26-12-2025",
       "time": "09:08 PM",
       "seats": 4,
-      "remarks": "TESTING"
+      "remarks": "TESTING",
+      "status": "ACTIVE"
     },
     {
       "email": "rakeshbunu@gmail.com",
@@ -42,7 +45,8 @@
       "date": "24-12-2025",
       "time": "09:08 PM",
       "seats": 3,
-      "remarks": "TESTING"
+      "remarks": "TESTING",
+      "status": "ACTIVE"
     },
     {
       "email": "rakeshbunu@gmail.com",
@@ -53,7 +57,8 @@
       "date": "24-12-2025",
       "time": "08:08 AM",
       "seats": "m cdd",
-      "remarks": "testing"
+      "remarks": "testing",
+      "status": "ACTIVE"
     },
     {
       "email": "rakeshbunu@gmail.com",
@@ -64,7 +69,8 @@
       "date": "24-12-2025",
       "time": "02:08 PM",
       "seats": 3,
-      "remarks": "TRY TO CALL ME"
+      "remarks": "TRY TO CALL ME",
+      "status": "CANCELLED"
     }
   ]
 }
