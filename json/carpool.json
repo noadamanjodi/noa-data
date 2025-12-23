@@ -1,3 +1,26 @@
 {
-  "rides": []
+  "rides": [
+    {
+      "email": "rakeshbunu@gmail.com",
+      "name": "RAKESH",
+      "phone": "9438325591",
+      "pickup": "DAMANJODI",
+      "drop": "VIZAG",
+      "date": "25-12-2025",
+      "time": "08:08 PM",
+      "seats": 4,
+      "remarks": "TESTING"
+    },
+    {
+      "email": "rakeshbunu@gmail.com",
+      "name": "RAKESH",
+      "phone": "9438325591",
+      "pickup": "BERHMPUR",
+      "drop": "DAMANJODI",
+      "date": "24-12-2025",
+      "time": "08:08 PM",
+      "seats": 2,
+      "remarks": "TESTING"
+    }
+  ]
 }
