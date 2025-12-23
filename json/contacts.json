@@ -113,7 +113,7 @@
       "extra": ""
     },
     {
-      "category": "TAXI",
+      "category": "TRANSPORT",
       "name": "Sai Tour And Travels",
       "phone": "7008183377",
       "alternate": "9556622879",
@@ -158,6 +158,14 @@
       "phone": "9439539537",
       "alternate": "8895636500",
       "address": "BSNL Office ,NALCO Township, BSNL Exchange and JTO Office, Damanjodi, Odisha 763008",
+      "extra": ""
+    },
+    {
+      "category": "Shops",
+      "name": "Boyanika Damanjodi",
+      "phone": "9439279534",
+      "alternate": "06742530230",
+      "address": "Boyanika Damanjodi,Odisha State Handloom WCS Ltd Shop No.17, Market Complex, Sector 3, Damanjodi, Odisha 763008",
       "extra": ""
     },
     {
