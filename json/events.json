@@ -1,5 +1,13 @@
 {
-  "coming": [],
+  "coming": [
+    {
+      "date": "08-01-2026",
+      "title": "EC BODY MEETING JAN-2026",
+      "desc": "EC Body Meeting as per schedule for the month of January 2026",
+      "status": "COMING",
+      "newTag": "NEW"
+    }
+  ],
   "important": [],
   "past": [
     {
@@ -11,7 +19,7 @@
     },
     {
       "date": "11-12-2025",
-      "title": "EC BODY MEETING",
+      "title": "EC BODY MEETING DEC-2025",
       "desc": "EC Body Meeting as per schedule for the month of December 2025",
       "status": "PAST",
       "newTag": ""
