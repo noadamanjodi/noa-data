@@ -1,0 +1,56 @@
+{
+  "superannuation": [
+    {
+      "colA": "04052",
+      "colB": "Darbhamalla Sreedhar Kumar",
+      "colC": "1988-02-24T18:30:00.000Z",
+      "colD": "2025-12-31T18:30:00.000Z",
+      "colE": "TECHNICAL SERVICES",
+      "colF": "E7",
+      "colG": "EPO-CGM(CRG)",
+      "colH": "M",
+      "colI": 9437025565,
+      "colJ": "DARBHAMALLA.KUMAR@NALCOINDIA.CO.IN",
+      "image": "https://drive.google.com/file/d/1v-t6PBZEtULUVjTDIx0uA6M6qjwRmKhB/view?usp=drivesdk"
+    },
+    {
+      "colA": "04687",
+      "colB": "Niranjan Samal",
+      "colC": "1989-04-24T18:30:00.000Z",
+      "colD": "2025-12-31T18:30:00.000Z",
+      "colE": "SECRETARIATE",
+      "colF": "E9",
+      "colG": "Executive Director(M&R)",
+      "colH": "M",
+      "colI": 9437055419,
+      "colJ": "NIRANJAN.SAMAL@NALCOINDIA.CO.IN",
+      "image": "https://drive.google.com/file/d/1UmvqqZqasumu1pGtTSr0mPmV4BIRX5sy/view?usp=drivesdk"
+    },
+    {
+      "colA": "04737",
+      "colB": "Rakesh Kumar Gangrade",
+      "colC": "1989-06-29T18:30:00.000Z",
+      "colD": "2025-12-31T18:30:00.000Z",
+      "colE": "PROJECT & TECHNICAL",
+      "colF": "E7",
+      "colG": "General Manager(Mechanical)",
+      "colH": "M",
+      "colI": 9437012083,
+      "colJ": "RAKESH.GANGRADE@NALCOINDIA.CO.IN",
+      "image": "https://drive.google.com/file/d/13xbPGo7P8s8KYnZ1xSlI0D-I_9lNIRRh/view?usp=drivesdk"
+    },
+    {
+      "colA": "04744",
+      "colB": "Rabindra Nath Nayak",
+      "colC": "1989-09-19T18:30:00.000Z",
+      "colD": "2025-12-31T18:30:00.000Z",
+      "colE": "S P P",
+      "colF": "E7",
+      "colG": "General Manager(Mechanical)",
+      "colH": "M",
+      "colI": 9437083747,
+      "colJ": "RABINDRA.NAYAK@NALCOINDIA.CO.IN",
+      "image": "https://drive.google.com/file/d/1pTYhwFUqVPF9OXXuJmzyk88mulQTIk1h/view?usp=drivesdk"
+    }
+  ]
+}
