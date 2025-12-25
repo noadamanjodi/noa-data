@@ -1,18 +1,6 @@
 {
   "rides": [
     {
-      "email": "rakeshbunu@gmail.com",
-      "name": "RAKESH",
-      "phone": "9438325591",
-      "pickup": "DAMANJODI",
-      "drop": "VIZAG",
-      "date": "25-12-2025",
-      "time": "08:08 PM",
-      "seats": 4,
-      "remarks": "TESTING",
-      "status": "ACTIVE"
-    },
-    {
       "email": "XXX@GMAIL.COM",
       "name": "RCS SETHY",
       "phone": "7978961230",
