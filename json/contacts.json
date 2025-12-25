@@ -41,12 +41,12 @@
       "extra": ""
     },
     {
-      "category": "HOSPITAL",
-      "name": "NALCO HOSPITAL",
-      "phone": "06853255333",
-      "alternate": "3333",
-      "address": "NALCO HOSPITAL, DAMANJODI",
-      "extra": ""
+      "category": "Temple",
+      "name": "SRI JAGANNATH TEMPLE, DAMANJODI",
+      "phone": "8763326129",
+      "alternate": "9438049410",
+      "address": "SRI JAGANNATH TEMPLE, DAMANJODI,Jagannath Temple, Damanjodi, Odisha 763008",
+      "extra": "https://shrijagannathtempledamanjodi.in/"
     },
     {
       "category": "EMERGENCY",
@@ -262,6 +262,14 @@
       "phone": "9437123305",
       "alternate": "8260844023",
       "address": "",
+      "extra": ""
+    },
+    {
+      "category": "HOSPITAL",
+      "name": "NALCO HOSPITAL",
+      "phone": "06853255333",
+      "alternate": "3333",
+      "address": "NALCO HOSPITAL, DAMANJODI",
       "extra": ""
     }
   ]
