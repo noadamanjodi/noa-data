@@ -53,7 +53,7 @@
       "name": "TOWNSHIP SECURITY",
       "phone": "6372801547",
       "alternate": "",
-      "address": "Nalco Township Security Office",
+      "address": "https://maps.app.goo.gl/nZtRj58rstSuWBZY8",
       "extra": ""
     },
     {
@@ -61,7 +61,7 @@
       "name": "Police Station, Damanjodi",
       "phone": "9438916795",
       "alternate": "06853254388",
-      "address": "Model Police Station,QW4C+R6R, NALCO Township, Damanjodi, Odisha 763008",
+      "address": "https://maps.app.goo.gl/WcnSa7YLsFwRoNYS8",
       "extra": ""
     },
     {
@@ -69,7 +69,7 @@
       "name": "FIRST AID CENTER",
       "phone": "8895261008",
       "alternate": "2222",
-      "address": "NALCO HOSPITAL, DAMANJODI",
+      "address": "https://maps.app.goo.gl/Xq28L1Sq655NKXCk6",
       "extra": ""
     },
     {
@@ -77,7 +77,7 @@
       "name": "NALCO FIRE STATION",
       "phone": "8895261014",
       "alternate": "4444",
-      "address": "NALCO Aluminium Refinery",
+      "address": "https://maps.app.goo.gl/fCCY1sFEZK11y1X5A",
       "extra": ""
     },
     {
@@ -85,7 +85,7 @@
       "name": "CCR CONTROL ROOM",
       "phone": "9827776420",
       "alternate": "6853254323",
-      "address": "NALCO Aluminium Refinery",
+      "address": "https://maps.app.goo.gl/fCCY1sFEZK11y1X5A",
       "extra": ""
     },
     {
@@ -93,7 +93,7 @@
       "name": "CISF CONTROL ROOM (AR)",
       "phone": "06853254243",
       "alternate": "",
-      "address": "NALCO Aluminium Refinery",
+      "address": "https://maps.app.goo.gl/fCCY1sFEZK11y1X5A",
       "extra": ""
     },
     {
@@ -101,7 +101,7 @@
       "name": "Hotel Lemon Royal",
       "phone": "7008927700",
       "alternate": "06853274007",
-      "address": "Hotel Lemon Royal Bhejaput Main Rd, Bhejaput, Damanjodi, Odisha 763008",
+      "address": "https://maps.app.goo.gl/XvXqhx6zvqnoiStX7",
       "extra": ""
     },
     {
@@ -109,7 +109,7 @@
       "name": "DMJ LEMON CASTLE",
       "phone": "06853253103",
       "alternate": "",
-      "address": "Lemon Castle Restaurant NALCO Township, sector-1, Damanjodi, Odisha 763008",
+      "address": "https://maps.app.goo.gl/nxf4WRrEcPW6nUcA7",
       "extra": ""
     },
     {
@@ -117,7 +117,7 @@
       "name": "NALCO CLUB",
       "phone": "8917475296",
       "alternate": "",
-      "address": "NALCO CLUB , QW52+3JM, Sector 3, Market Complex, Damanjodi, Odisha 763008",
+      "address": "https://maps.app.goo.gl/q6trmZ7RB1PDi2xh9",
       "extra": ""
     },
     {
@@ -233,7 +233,7 @@
       "extra": "http://www.jiomart.com/"
     },
     {
-      "category": "Personal service",
+      "category": "PERSONAL",
       "name": "AC shifting or new fixing(1)",
       "phone": "7735571347",
       "alternate": "",
@@ -241,7 +241,7 @@
       "extra": ""
     },
     {
-      "category": "Personal service",
+      "category": "PERSONAL",
       "name": "Plumbber job(1)",
       "phone": "8917505961",
       "alternate": "",
@@ -249,7 +249,7 @@
       "extra": ""
     },
     {
-      "category": "Personal service",
+      "category": "PERSONAL",
       "name": "Susant Jena DL or RTO jobs(1)",
       "phone": "9437022352",
       "alternate": "",
@@ -257,7 +257,7 @@
       "extra": ""
     },
     {
-      "category": "Personal service",
+      "category": "PERSONAL",
       "name": "Lakpati Nayak LIC Postal Agent(1)",
       "phone": "9437123305",
       "alternate": "8260844023",
