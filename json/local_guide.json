@@ -7,7 +7,8 @@
     "Map_Link": "https://maps.app.goo.gl/oqBCgX7q3mmExntZ8",
     "Photo_Link": "https://raw.githubusercontent.com/noadamanjodi/noa-data/main/image/nalco-hospital.jpg",
     "Priority": 1,
-    "Status": "Active"
+    "Status": "Active",
+    "": ""
   },
   {
     "Category": "School",
@@ -17,7 +18,8 @@
     "Map_Link": "https://maps.app.goo.gl/SEtV6XDjxb7strcX6",
     "Photo_Link": "https://raw.githubusercontent.com/noadamanjodi/noa-data/main/image/DPS.jpg",
     "Priority": 2,
-    "Status": "Active"
+    "Status": "Active",
+    "": ""
   },
   {
     "Category": "BANK",
@@ -27,7 +29,8 @@
     "Map_Link": "https://maps.app.goo.gl/pLs75Doe4sGHjo3F7",
     "Photo_Link": "https://raw.githubusercontent.com/noadamanjodi/noa-data/main/image/sbi_dmj.jpg",
     "Priority": 3,
-    "Status": "Active"
+    "Status": "Active",
+    "": ""
   },
   {
     "Category": "Petrol Pump",
@@ -37,6 +40,18 @@
     "Map_Link": "https://maps.app.goo.gl/1badvd5EtKxvjqby5",
     "Photo_Link": "https://raw.githubusercontent.com/noadamanjodi/noa-data/main/image/petrol%20pump%20iocl.jpg",
     "Priority": 4,
-    "Status": "Active"
+    "Status": "Active",
+    "": ""
+  },
+  {
+    "Category": "Temple",
+    "Name": "SRI JAGANNATH TEMPLE, DAMANJODI",
+    "Description": "",
+    "Contact": "9438049410",
+    "Map_Link": "https://maps.app.goo.gl/aewoyYM4mbGbzdsW9",
+    "Photo_Link": "",
+    "Priority": "",
+    "Status": "Active",
+    "": "?"
   }
 ]
