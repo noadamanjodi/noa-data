@@ -116,7 +116,7 @@
       "category": "RESTAURANT",
       "name": "Gitanjali Restaurant",
       "phone": "8328978447",
-      "alternate": "",
+      "alternate": "9437791253",
       "address": "Gitanjali Restaurant,QW58+2J5, Township, NALCO Township, Damanjodi, Odisha 763008",
       "extra": ""
     },
@@ -126,6 +126,14 @@
       "phone": "7077780872",
       "alternate": "",
       "address": "OD10 Restaurant,QV5X+48V, Sector 3, Market Complex, Damanjodi, Odisha 763008",
+      "extra": ""
+    },
+    {
+      "category": "RESTAURANT",
+      "name": "Green Chilly Family Restaurent",
+      "phone": "9861505067",
+      "alternate": "",
+      "address": "Green Chillyz,Bhejaput, Damanjodi, Odisha 763008",
       "extra": ""
     },
     {
