@@ -33,25 +33,25 @@
     "": ""
   },
   {
+    "Category": "Temple",
+    "Name": "SRI JAGANNATH TEMPLE, DAMANJODI",
+    "Description": "",
+    "Contact": "9438049410",
+    "Map_Link": "https://maps.app.goo.gl/aewoyYM4mbGbzdsW9",
+    "Photo_Link": "https://raw.githubusercontent.com/noadamanjodi/noa-data/main/image/JAGANNATH.png",
+    "Priority": 4,
+    "Status": "Active",
+    "": "?"
+  },
+  {
     "Category": "Petrol Pump",
     "Name": "Indu Filling Station Ksk",
     "Description": "IndianOil petrol pump",
     "Contact": "9437043652",
     "Map_Link": "https://maps.app.goo.gl/1badvd5EtKxvjqby5",
     "Photo_Link": "https://raw.githubusercontent.com/noadamanjodi/noa-data/main/image/petrol%20pump%20iocl.jpg",
-    "Priority": 4,
+    "Priority": 5,
     "Status": "Active",
     "": ""
-  },
-  {
-    "Category": "Temple",
-    "Name": "SRI JAGANNATH TEMPLE, DAMANJODI",
-    "Description": "",
-    "Contact": "9438049410",
-    "Map_Link": "https://maps.app.goo.gl/aewoyYM4mbGbzdsW9",
-    "Photo_Link": "",
-    "Priority": "",
-    "Status": "Active",
-    "": "?"
   }
 ]
