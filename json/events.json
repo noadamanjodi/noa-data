@@ -6,13 +6,6 @@
       "desc": "EC Body Meeting as per schedule for the month of January 2026",
       "status": "COMING",
       "newTag": "NEW"
-    },
-    {
-      "date": "30-12-2025",
-      "title": "EC BODY MEETING DEC-2025",
-      "desc": "EC Body Meeting at 08:00PM at NOA Office to discuss for coming events & members are requested to join",
-      "status": "COMING",
-      "newTag": "NEW"
     }
   ],
   "important": [],
@@ -44,6 +37,13 @@
       "desc": "EC Body to meet new CGM(AR) at 11:30 AM in plant office.All members are requested to come",
       "status": "PAST",
       "newTag": ""
+    },
+    {
+      "date": "30-12-2025",
+      "title": "EC BODY MEETING DEC-2025",
+      "desc": "EC Body Meeting at 08:00PM at NOA Office to discuss for coming events & members are requested to join",
+      "status": "PAST",
+      "newTag": "NEW"
     }
   ]
 }
